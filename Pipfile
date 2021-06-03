@@ -1,10 +1,10 @@
-
 [[source]]
 url = "https://pypi.org/simple"
 verify_ssl = true
 name = "pypi"
 
 [packages]
+flask = "*"
 
 [dev-packages]
 black = "*"
@@ -20,3 +20,6 @@ python_version = "3.8"
 
 [pipenv]
 allow_prereleases = true
+
+[scripts]
+flask = "flask run --port 3000"

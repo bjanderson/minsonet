@@ -1,0 +1,19 @@
+# testing apis from myapp/apis/routes.py
+
+# environment variables set in vscode's (folder) settings.json
+# to change the environment variables click on the environment name in the bottom right on the statusbar
+
+# home
+GET {{flaskserver}}
+
+###
+
+#post_example
+POST {{flaskserver}}/post/example
+{{jsoncontent}}
+authorization-sha256: "test-auth-token"
+
+{
+  "request_id": "123",
+  "payload": "test payload"
+}

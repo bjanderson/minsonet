@@ -1,3 +1,23 @@
 {
-  "python.pythonPath": "/home/bj/dev/projects/intermediate-programming/minsonet/.venv/bin/python3.8"
+  "python.pythonPath": ".venv/bin/python",
+  "python.testing.pytestArgs": [
+    "tests",
+    "-v"
+  ],
+  "python.testing.unittestEnabled": false,
+  "python.testing.nosetestsEnabled": false,
+  "python.testing.pytestEnabled": true,
+  "python.linting.flake8Enabled": true,
+  "python.linting.pylintEnabled": true,
+  "python.linting.enabled": true,
+  "python.linting.pylintArgs": ["--load-plugins",],
+
+  "rest-client.environmentVariables": {
+    "$shared": {
+      "jsoncontent": "Content-Type: application/json"
+    },
+    "Dev Env": {
+      "flaskserver": "http://localhost:5000"
+    }
+  },
 }

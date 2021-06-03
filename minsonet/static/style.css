@@ -1,0 +1,25 @@
+
+h1 {
+  font-family: sans-serif;
+}
+
+table {
+  width: 100%;
+}
+
+td {
+  border: 1px solid black;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: rgba(0,0,0,0.1);
+}
+
+.edit-user {
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  display: flex;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MinSoNet</title>
+
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <h1>Welcome to MinSoNet</h1>
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/login">Login</a></li>
+      <li><a href="/user">User</a></li>
+      <li><a href="/logout">Logout</a></li>
+    </ul>
+  </nav>
+
+  <img src="/static/network-brain.jpeg" alt="Picture of a network in the shape of a brain.">
+
+  <template id="editusertemplate">
+    <div class="edit-user-form" id="edituserform">
+      <div class="input">
+        <label for="name">Name </label>
+        <input type="text" id="name">
+      </div>
+
+      <div class="input">
+        <label for="email">Email </label>
+        <input type="email" id="email">
+      </div>
+
+      <button id="editbutton">Save</button>
+    </div>
+  </template>
+
+  <script src="/static/app.js"></script>
+
+</body>
+</html>

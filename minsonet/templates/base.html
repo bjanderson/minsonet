@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+  {% block header %}{% endblock %}
+  <nav>
+    <ul>
+      <li>
+        <a href="/">Home</a>
+        <a href="/login">Login</a>
+        <a href="/user">User</a>
+        <a href="/logout">Logout</a>
+      </li>
+    </ul>
+  </nav>
+  <p>Hello! {{content}}</p>
+  {% block content %}{% endblock %}
+</body>
+</html>
