@@ -6,20 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>{% block title %}{% endblock %}</title>
+
+  <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
   {% block header %}{% endblock %}
-  <nav>
-    <ul>
-      <li>
-        <a href="/">Home</a>
-        <a href="/login">Login</a>
-        <a href="/user">User</a>
-        <a href="/logout">Logout</a>
-      </li>
-    </ul>
-  </nav>
-  <p>Hello! {{content}}</p>
+
+  {% include 'main-nav.html' %}
+
   {% block content %}{% endblock %}
+
+  <script src="/static/app.js"></script>
 </body>
 </html>

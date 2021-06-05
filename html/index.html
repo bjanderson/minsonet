@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en-us">
+
+<head> <!-- The head section contains information to help the browser display the page correctly. -->
+  <meta charset="utf-8"> <!-- This meta tag should always be placed at the very top of the head section. It tells the browser what character encoding to use to read the rest of the page. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- This sets the scale for mobile devices so they don't zoom in or out and make the page look wierd when it first loads. -->
+
+  <title>MinSoNet</title> <!-- The title appears in the browser tab for this page. -->
+  <meta name="description" content="A miniature social network"> <!-- The description is optional, and will probably show up in the search results if this page was found by a search engin online. -->
+
+  <!-- Place favicon.ico in the root directory - the browser will automatically look for it there. -->
+  <link rel="apple-touch-icon" href="./img/icon.png"> <!-- You can tell some devices what image to use instead of the favicon. -->
+
+  <!-- Stylesheet order is important because the last one wins when it comes to duplicate style settings. -->
+  <link rel="stylesheet" href="./css/normalize.css">
+  <link rel="stylesheet" href="./css/h5bp.css">
+  <link rel="stylesheet" href="./css/style.css">
+
+  <!-- You can also place <script> tags in the head, but I usually load them at the end of the body. See below.-->
+</head>
+
+<body> <!-- The body section contains all of the stuff that will show up in the webpage. -->
+
+  <!-- This is the website header, and we probably want this to appear the same on all pages of the site. -->
+  <header class="site-header">
+    <div class="site-title">
+      <div class="site-logo">
+        <img src="./img/network-brain.jpeg" alt="Picture of a network in the shape of a brain.">
+      </div>
+      <div class="site-name">
+        MinSoNet
+      </div>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./user.html">User</a></li>
+        <li><a href="./login.html">Login</a></li>
+        <li><a href="./logout.html">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="main" role="main">
+    <!-- Add your site or application content here -->
+    <h1>Welcome to MinSoNet</h1>
+    <p>The minature social network!</p>
+  </div>
+
+  <!-- Keep your script loading at the end of the body so that the scripts can find any html elements they may be looking for. -->
+  <!-- Order is important, scripts that depend on other scripts should be loaded after the scripts they depend on... -->
+  <script src="./js/main.js"></script>
+
+</body>
+</html>

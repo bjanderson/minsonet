@@ -8,7 +8,7 @@ from .middleware import LoggingMiddleware
 from .routes import init_routes
 
 logging.basicConfig(
-    filename="myflaskapp.log",
+    filename="minsonet.log",
     format="%(asctime)s - %(levelname)s (%(name)s): %(message)s",
     level=logging.DEBUG,
 )
@@ -20,6 +20,9 @@ app.secret_key = "dont store your secrets in plain text"
 app.permanent_session_lifetime = timedelta(days=1)
 init_apis(app)
 init_routes(app)
+
+welcome = "\n#####################################\n\t Welcome to MinSoNet\n\thttp://localhost:5000\n#####################################\n"
+logging.info(welcome)
 
 print("\n#####################################")
 print("\t Welcome to MinSoNet")
