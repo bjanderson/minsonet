@@ -9,12 +9,11 @@
   <meta name="description" content="A miniature social network"> <!-- The description is optional, and will probably show up in the search results if this page was found by a search engin online. -->
 
   <!-- Place favicon.ico in the root directory - the browser will automatically look for it there. -->
-  <link rel="apple-touch-icon" href="./img/icon.png"> <!-- You can tell some devices what image to use instead of the favicon. -->
+  <link rel="apple-touch-icon" href="./img/apple-icon.png"> <!-- You can tell some devices what image to use instead of the favicon. -->
 
   <!-- Stylesheet order is important because the last one wins when it comes to duplicate style settings. -->
-  <link rel="stylesheet" href="./css/normalize.css">
-  <link rel="stylesheet" href="./css/h5bp.css">
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/every-page.css">
+  <link rel="stylesheet" href="./css/login-form.css">
 
   <!-- You can also place <script> tags in the head, but I usually load them at the end of the body. See below.-->
 </head>
@@ -44,13 +43,29 @@
 
   <div class="main" role="main">
     <!-- Add your site or application content here -->
-    <h1>Welcome to MinSoNet</h1>
-    <p>The minature social network!</p>
+    <h1 class="title">Welcome To MinSoNet</h1>
+    <p class="subtitle">The minature social network</p>
+
+    <div class="login-form">
+      <h2>Login</h2>
+
+      <form action="" method="POST">
+        <div class="email">
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" autofocus>
+        </div>
+
+        <div class="password">
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password">
+        </div>
+      </form>
+    </div>
   </div>
 
   <!-- Keep your script loading at the end of the body so that the scripts can find any html elements they may be looking for. -->
   <!-- Order is important, scripts that depend on other scripts should be loaded after the scripts they depend on... -->
-  <script src="./js/main.js"></script>
+  <script src="./js/app.js"></script>
 
 </body>
 </html>
