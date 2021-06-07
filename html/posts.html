@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>MinSoNet - My Posts</title>
+
+  <link rel="apple-touch-icon" href="./img/apple-icon.png">
+
+  <link rel="stylesheet" href="./css/every-page.css">
+  <link rel="stylesheet" href="./css/posts.css">
+
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="site-title">
+      <div class="site-logo">
+        <img src="./img/network-brain.jpeg" alt="Picture of a network in the shape of a brain.">
+      </div>
+      <div class="site-name">
+        MinSoNet
+      </div>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./user.html">User</a></li>
+        <li><a href="./login.html">Login</a></li>
+        <li><a href="./logout.html">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="main" role="main">
+    <div class="side-bar">Friends</div>
+    <div class="posts">Posts</div>
+  </div>
+
+  <template id="posttemplate">
+    <div class="post">
+      <div class="post-title"></div>
+      <div class="post-author">
+        <span class="post-author-name"></span> - <span class="post-author-date"></span>
+      </div>
+      <div class="post-content"></div>
+    </div>
+  </template>
+
+  <script src="./js/app.js"></script>
+  <script src="./js/posts.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+.main {
+  display: grid;
+  grid-template-columns: 20rem 1fr;
+}
+
+.side-bar {
+  /* background: rgba(0, 255, 255, 0.1); */
+  margin-right: 1rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.posts {
+  display: flex;
+  flex-direction: column;
+}
+
+.post {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  max-width: 50rem;
+}
+
+.post-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.post-author {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.post-content {
+  margin-top: 0.5rem;
+}
