@@ -38,14 +38,25 @@
 
   <div class="main" role="main">
     <div class="side-bar">Friends</div>
-    <div class="posts">Posts</div>
+    <div class="content">
+      <div class="new-post">
+        <strong>New Post</strong>
+        <input type="text" name="post_title" id="post_title" placeholder="Title">
+        <textarea name="post_content" id="post_content" cols="30" rows="5" placeholder="What have you got to say?"></textarea>
+        <button id="create_post">Create</button>
+      </div>
+
+      <hr>
+
+      <div class="posts"></div>
+    </div>
   </div>
 
   <template id="posttemplate">
     <div class="post">
       <div class="post-title"></div>
-      <div class="post-author">
-        <span class="post-author-name"></span> - <span class="post-author-date"></span>
+      <div class="post-info">
+        <span class="post-author"></span> - <span class="post-date"></span> - <span class="post-likes">Likes: </span>
       </div>
       <div class="post-content"></div>
     </div>

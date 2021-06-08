@@ -11,6 +11,33 @@
   height: 100%;
 }
 
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.new-post {
+  display: flex;
+  flex-direction: column;
+  max-width: 50rem;
+}
+
+.new-post input {
+  margin-bottom: 0.25rem;
+}
+
+.new-post textarea {
+  margin-bottom: 0.25rem;
+}
+
+.new-post button {
+  color: white;
+  background-color: rgb(0, 128, 192);
+  width: 10rem;
+  height: 2rem;
+  border: none;
+}
+
 .posts {
   display: flex;
   flex-direction: column;
@@ -28,7 +55,7 @@
   font-weight: bold;
 }
 
-.post-author {
+.post-info {
   color: rgba(0, 0, 0, 0.5);
 }
 
