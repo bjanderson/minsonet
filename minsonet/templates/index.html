@@ -1,37 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MinSoNet</title>
+{% extends "default.html" %}
 
-  <link rel="stylesheet" href="/static/css/style.css">
-</head>
-<body>
-  <h1>Welcome to MinSoNet</h1>
+{% block title %}MinSoNet{% endblock %}
+{% block description %}A miniature social network{% endblock %}
 
-  {% include 'main-nav.html' %}
+{% block content %}
 
-  <img src="/static/img/network-brain.jpeg" alt="Picture of a network in the shape of a brain.">
+  <h1 class="title">Welcome To MinSoNet</h1>
+  <p class="subtitle">The minature social network</p>
 
-  <template id="editusertemplate">
-    <div class="edit-user-form" id="edituserform">
-      <div class="input">
-        <label for="name">Name </label>
-        <input type="text" id="name">
-      </div>
+  {% include 'login-form.html'%}
 
-      <div class="input">
-        <label for="email">Email </label>
-        <input type="email" id="email">
-      </div>
-
-      <button id="editbutton">Save</button>
-    </div>
-  </template>
-
-  <script src="/static/js/app.js"></script>
-
-</body>
-</html>
+{% endblock %}

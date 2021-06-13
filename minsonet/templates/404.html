@@ -1,10 +1,9 @@
-<!doctype html>
-<html lang="en">
+{% extends "base.html" %}
 
-<head>
-  <meta charset="utf-8">
-  <title>Page Not Found</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+{% block title %}Page Not Found{% endblock %}
+
+{% block basestyles %}
+
   <style>
     * {
       line-height: 1.2;
@@ -57,13 +56,13 @@
 
     }
   </style>
-</head>
+{% endblock %}
 
-<body>
+{% block basecontent %}
+
   <h1>Page Not Found</h1>
   <p>Sorry, but the page you were trying to view does not exist.</p>
-  <img src="./img/404.jpg" alt="Where is it?">
-</body>
+  <img src="/static/img/404.jpg" alt="Where is it?">
+  <p><a href="/">Take me home!</a></p>
 
-</html>
-<!-- IE needs 512+ bytes: https://docs.microsoft.com/archive/blogs/ieinternals/friendly-http-error-pages -->
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends "default.html" %}
+
+{% block styles %}
+  <link rel="stylesheet" href="/static/css/posts.css">
+{% endblock %}
+
+{% block title %}MinSoNet - My Posts{% endblock %}
+
+{% block content %}
+
+  <div class="side-bar">Friends</div>
+  <div class="content">
+    <div class="new-post">
+      <strong>New Post</strong>
+      <input type="text" name="post_title" id="post_title" placeholder="Title">
+      <textarea name="post_content" id="post_content" cols="30" rows="5" placeholder="What have you got to say?"></textarea>
+      <button id="create_post_button">Create</button>
+    </div>
+
+    <hr>
+
+    <div class="posts"></div>
+  </div>
+
+{% endblock %}
+
+{% block templates %}
+
+  <template id="posttemplate">
+    <div class="post">
+      <div class="post-title"></div>
+      <div class="post-info">
+        <span class="post-author"></span> - <span class="post-date"></span> - <span class="post-likes">Likes: </span>
+      </div>
+      <div class="post-content"></div>
+    </div>
+  </template>
+
+{% endblock %}
+
+{% block scripts %}
+  <script src="/static/js/posts.js"></script>
+{% endblock %}
