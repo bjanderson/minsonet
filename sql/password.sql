@@ -1,28 +1,28 @@
 
 CREATE TABLE IF NOT EXISTS password (
-    userPK TEXT NOT NULL PRIMARY KEY,
     password TEXT NOT NULL,
+    userPK TEXT NOT NULL PRIMARY KEY,
     FOREIGN KEY(userPK) REFERENCES user(pk)
 );
 
-INSERT INTO password (userPK, password)
-VALUES ('user1', 'Password_1');
+INSERT INTO password (password, userPK)
+VALUES ('Password_1', 'userpk1');
 
-INSERT INTO password (userPK, password)
-VALUES ('user2', 'Password_2');
+INSERT INTO password (password, userPK)
+VALUES ('Password_2', 'userpk2');
 
-INSERT INTO password (userPK, password)
-VALUES ('user3', 'Password_3');
+INSERT INTO password (password, userPK)
+VALUES ('Password_3', 'userpk3');
 
 -- UPDATE password
 -- SET password='Password_One'
--- WHERE userPK == 'user1';
+-- WHERE userPK == 'userpk1';
 
 -- SELECT password, userPK
 -- FROM password
--- WHERE userPK == 'user1';
+-- WHERE userPK == 'userpk1';
 
 -- DELETE FROM password
--- WHERE userPK == 'user1';
+-- WHERE userPK == 'userpk1';
 
 -- DROP TABLE IF EXISTS password;

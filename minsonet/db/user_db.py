@@ -9,11 +9,11 @@ class UserDB(CrudDB):
 
     @property
     def table_column_definitions(self):
-        # Note: these columns must be in the same order as the property assignments in the User calss or the mappings will break
+        # Note: these columns must be in the same order as the property assignments in the User class or the mappings will break
         return [
-            "pk INTEGER PRIMARY KEY AUTOINCREMENT",
             "email TEXT NOT NULL",
             "name TEXT NOT NULL",
+            "pk INTEGER PRIMARY KEY AUTOINCREMENT",
         ]
 
     def create_item(self, tup):

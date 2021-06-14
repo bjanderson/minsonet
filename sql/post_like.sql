@@ -8,16 +8,16 @@ CREATE TABLE IF NOT EXISTS post_like (
 );
 
 INSERT INTO post_like (postPK, userPK)
-VALUES ('post1', 'user1');
+VALUES ('postpk1', 'userpk1');
 
 INSERT INTO post_like (postPK, userPK)
-VALUES ('post1', 'user2');
+VALUES ('postpk1', 'userpk2');
 
 INSERT INTO post_like (postPK, userPK)
-VALUES ('post1', 'user3');
+VALUES ('postpk1', 'userpk3');
 
 -- DELETE FROM post_like
--- WHERE postPK == 'post1' AND userPK == 'user1';
+-- WHERE postPK == 'postpk1' AND userPK == 'userpk1';
 
 DROP TABLE IF EXISTS post_like;
 

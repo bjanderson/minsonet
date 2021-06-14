@@ -2,32 +2,32 @@
 -- WHERE type='table' AND name='user';
 
 CREATE TABLE IF NOT EXISTS user (
-    pk TEXT NOT NULL PRIMARY KEY,
     email TEXT NOT NULL UNIQUE,
-    name TEXT NOT NULL
+    name TEXT NOT NULL,
+    pk TEXT NOT NULL PRIMARY KEY
 );
 
-INSERT INTO user (pk, email, name)
-VALUES ('user1', 'user_1@email.tld', 'user 1');
+INSERT INTO user (email, name, pk)
+VALUES ('user_1@email.tld', 'username 1', 'userpk1');
 
-INSERT INTO user (pk, email, name)
-VALUES ('user2', 'user_2@email.tld', 'user 2');
+INSERT INTO user (email, name, pk)
+VALUES ('user_2@email.tld', 'username 2', 'userpk2');
 
-INSERT INTO user (pk, email, name)
-VALUES ('user3', 'user_3@email.tld', 'user 3');
+INSERT INTO user (email, name, pk)
+VALUES ('user_3@email.tld', 'username 3', 'userpk3');
 
 -- UPDATE user
--- SET email='user_one@email.tld', name='user One'
--- WHERE pk == 'user1';
+-- SET email='user_one@email.tld', name='username One'
+-- WHERE pk == 'userpk1';
 
 -- SELECT * FROM user;
 
 -- SELECT name, email, pk
 -- FROM user
--- WHERE pk == 'user1'
+-- WHERE pk == 'userpk1'
 -- ORDER BY name DESC;
 
 -- DELETE FROM user
--- WHERE pk == 'user1';
+-- WHERE pk == 'userpk1';
 
 -- DROP TABLE IF EXISTS user;

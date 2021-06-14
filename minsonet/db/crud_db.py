@@ -16,6 +16,7 @@ class CrudDB(ABC):
 
     @property
     def table_columns(self):
+        # TODO: filter out PRIMARY KEY and FOREIGN KEY from the column defs
         return list(map(lambda col: col.split(" ")[0], self.table_column_definitions))
 
     @abstractmethod
