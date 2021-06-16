@@ -1,8 +1,9 @@
 
 CREATE TABLE IF NOT EXISTS password (
     password TEXT NOT NULL,
-    userPK TEXT NOT NULL PRIMARY KEY,
-    FOREIGN KEY(userPK) REFERENCES user(pk)
+    userPK TEXT NOT NULL,
+    FOREIGN KEY(userPK) REFERENCES user(pk),
+    PRIMARY KEY(password, userPK)
 );
 
 INSERT INTO password (password, userPK)

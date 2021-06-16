@@ -13,7 +13,7 @@ class UserDB(CrudDB):
         return [
             "email TEXT NOT NULL",
             "name TEXT NOT NULL",
-            "pk INTEGER PRIMARY KEY AUTOINCREMENT",
+            "pk TEXT NOT NULL PRIMARY KEY",
         ]
 
     def create_item(self, tup):

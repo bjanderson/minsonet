@@ -1,9 +1,9 @@
 -- get the user info with their password
 SELECT
-    user.pk,
-    user.name,
     user.email,
-    password.password
+    user.name,
+    password.password,
+    user.pk
 FROM user
 INNER JOIN password
     ON user.pk == password.userPK;

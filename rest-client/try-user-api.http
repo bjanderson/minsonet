@@ -2,7 +2,7 @@ GET {{flaskserver}}/user
 
 ###
 
-GET {{flaskserver}}/user/2
+GET {{flaskserver}}/user/userpk1
 
 ###
 
@@ -10,21 +10,21 @@ POST {{flaskserver}}/user
 {{jsoncontent}}
 
 {
-  "name": "new testuser",
-  "email": "new-test@email"
+  "name": "username 3",
+  "email": "user_3@email.tld"
 }
 
 ###
 
-PUT {{flaskserver}}/user/2
+PUT {{flaskserver}}/user
 {{jsoncontent}}
 
 {
-  "name": "old testuser",
-  "email": "old-test@email",
-  "pk": 2
+  "name": "updated username 3",
+  "email": "updated_user_3@email.tld",
+  "pk": "userpk3"
 }
 
 ###
 
-DELETE {{flaskserver}}/user/1
+DELETE {{flaskserver}}/user/userpk3

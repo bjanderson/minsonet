@@ -12,8 +12,9 @@ class PasswordDB(CrudDB):
         # Note: these columns must be in the same order as the property assignments in the Password class or the mappings will break
         return [
             "password TEXT NOT NULL",
-            "userPK INTEGER PRIMARY KEY AUTOINCREMENT",
+            "userPK TEXT NOT NULL",
             "FOREIGN KEY(userPK) REFERENCES user(pk)",
+            "PRIMARY KEY(password, userPK)",
         ]
 
     def create_item(self, tup):

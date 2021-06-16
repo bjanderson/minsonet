@@ -19,9 +19,9 @@ VALUES ('postpk1', 'userpk3');
 -- DELETE FROM post_like
 -- WHERE postPK == 'postpk1' AND userPK == 'userpk1';
 
-DROP TABLE IF EXISTS post_like;
+-- DROP TABLE IF EXISTS post_like;
 
 -- count how many likes a post has
-SELECT postPK, COUNT(DISTINCT userPK) as num_likes
-FROM post_like
-GROUP BY postPK;
+-- SELECT postPK, COUNT(DISTINCT userPK) as num_likes
+-- FROM post_like
+-- GROUP BY postPK;

@@ -22,7 +22,7 @@ VALUES ('user_3@email.tld', 'username 3', 'userpk3');
 
 -- SELECT * FROM user;
 
--- SELECT name, email, pk
+-- SELECT email, name, pk
 -- FROM user
 -- WHERE pk == 'userpk1'
 -- ORDER BY name DESC;

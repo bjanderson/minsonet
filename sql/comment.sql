@@ -35,7 +35,7 @@ VALUES ('comment 3', 'userpk1', datetime('now'), null, 'commentpk3','postpk1');
 
 -- get all comments for a post,
 -- and sort them by the date they were created
-SELECT comment, commenterPK, createdAt, parentCommentPK, pk, postPK
-FROM comment
-WHERE postPK == 'postpk1'
-ORDER BY createdAt DESC;
+-- SELECT comment, commenterPK, createdAt, parentCommentPK, pk, postPK
+-- FROM comment
+-- WHERE postPK == 'postpk1'
+-- ORDER BY createdAt DESC;

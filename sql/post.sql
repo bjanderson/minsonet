@@ -30,7 +30,7 @@ VALUES ('userpk1', 'post content 2', datetime('now'), 'postpk2', 'post title 2')
 
 -- get all posts made by a user,
 -- and sort them by the date they were created
-SELECT authorPK, content, createdAt, pk, title
-FROM post
-WHERE authorPK == 'userpk1'
-ORDER BY createdAt DESC;
+-- SELECT authorPK, content, createdAt, pk, title
+-- FROM post
+-- WHERE authorPK == 'userpk1'
+-- ORDER BY createdAt DESC;

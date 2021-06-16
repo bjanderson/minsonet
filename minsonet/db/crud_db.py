@@ -1,3 +1,4 @@
+import uuid
 from abc import ABC, abstractmethod, abstractproperty
 
 
@@ -16,8 +17,13 @@ class CrudDB(ABC):
 
     @property
     def table_columns(self):
-        # TODO: filter out PRIMARY KEY and FOREIGN KEY from the column defs
-        return list(map(lambda col: col.split(" ")[0], self.table_column_definitions))
+        cols = filter(
+            lambda col: not col.startswith("PRIMARY KEY")
+            and not col.startswith("FOREIGN KEY"),
+            self.table_column_definitions,
+        )
+        cols = list(map(lambda col: col.split(" ")[0], cols))
+        return cols
 
     @abstractmethod
     def create_item(self, tup):
@@ -50,29 +56,35 @@ class CrudDB(ABC):
                 values.append(None)
 
         vals = ", ".join(f"'{v}'".replace("'None'", "null") for v in values)
-
         return vals
 
     def insert(self, item):
-        cols = self.get_column_names()
-        vals = self.get_item_values(item)
-        stmt = f"INSERT INTO {self.table_name} ({cols}) VALUES ({vals})"
-        pk = self.db.execute(stmt)
-        return self.get(pk)
+        print(f"insert item: {item}")
+        try:
+            item["pk"] = uuid.uuid4()
+            cols = self.get_column_names()
+            vals = self.get_item_values(item)
+            stmt = f"INSERT INTO {self.table_name} ({cols}) VALUES ({vals})"
+            self.db.execute(stmt)
+        except Exception as e:
+            template = "An exception of type {0} occurred. Arguments:\n{1!r}"
+            message = template.format(type(e).__name__, e.args)
+            print(message)
+        return self.get(item["pk"])
 
     def update(self, item):
         setters = self.get_update_setters(item)
-        stmt = f"UPDATE {self.table_name} SET {setters} WHERE pk = {item['pk']}"
+        stmt = f"UPDATE {self.table_name} SET {setters} WHERE pk = '{item['pk']}'"
         self.db.execute(stmt)
         return self.get(item["pk"])
 
     def get_update_setters(self, item):
         cols = self.table_columns
-        cols = filter(lambda col: col != "pk", cols)
-        vals = self.get_item_values(item).split(", ")[1:]
+        vals = self.get_item_values(item).split(", ")
         setters = []
         for c, v in zip(cols, vals):
             setters.append(f"{c} = {v}")
+        setters = filter(lambda setter: not setter.startswith("pk = "), setters)
         return ", ".join(setters)
 
     def get_all(self):
@@ -88,12 +100,12 @@ class CrudDB(ABC):
 
     def get(self, pk):
         cols = self.get_column_names()
-        stmt = f"SELECT {cols} FROM {self.table_name} WHERE pk = {pk}"
+        stmt = f"SELECT {cols} FROM {self.table_name} WHERE pk = '{pk}'"
         result = self.db.fetchone(stmt)
         if result is not None:
             result = self.create_item(result)
         return result
 
     def delete(self, pk):
-        stmt = f"DELETE FROM {self.table_name} WHERE pk = {pk}"
+        stmt = f"DELETE FROM {self.table_name} WHERE pk = '{pk}'"
         self.db.execute(stmt)

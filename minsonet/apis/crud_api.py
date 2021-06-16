@@ -40,19 +40,51 @@ class CrudAPI(ABC):
         data_string = request.get_data()
         data = json.loads(data_string)
         item = self.db.insert(data)
-        response = self.app.response_class(
-            response=json.dumps(item), status=200, mimetype="application/json"
-        )
-        return response
+        if item is None:
+            response_item = json.dumps(
+                {"message": f"Could not insert data {json.loads(data_string)}"}
+            )
+            response = self.app.response_class(
+                response=response_item, status=500, mimetype="application/json"
+            )
+            return response
+        else:
+            response_item = json.dumps(item.__dict__)
+            response = self.app.response_class(
+                response=response_item, status=200, mimetype="application/json"
+            )
+            return response
 
     def put(self, pk=None):
         data_string = request.get_data()
         data = json.loads(data_string)
         item = self.db.update(data)
-        response = self.app.response_class(
-            response=json.dumps(item), status=200, mimetype="application/json"
-        )
-        return response
+        if item is None:
+            response_item = json.dumps(
+                {"message": f"Could not update data {json.loads(data_string)}"}
+            )
+            response = self.app.response_class(
+                response=response_item, status=500, mimetype="application/json"
+            )
+            return response
+        else:
+            response_item = json.dumps(item.__dict__)
+            response = self.app.response_class(
+                response=response_item, status=200, mimetype="application/json"
+            )
+            return response
+        # try:
+        #     response_item = json.dumps(item.__dict__) if item is not None else item
+        #     response = self.app.response_class(
+        #         response=response_item,
+        #         status=200,
+        #         mimetype="application/json",
+        #     )
+        #     return response
+        # except Exception as e:
+        #     template = "An exception of type {0} occurred. Arguments:\n{1!r}"
+        #     message = template.format(type(e).__name__, e.args)
+        #     print(message)
 
     def delete(self, pk=None):
         self.db.delete(pk)
@@ -67,7 +99,7 @@ class CrudAPI(ABC):
             f"{self.route}", f"{self.id}-post", self.post, None, methods=["POST"]
         )
         app.add_url_rule(
-            f"{self.route}/<pk>", f"{self.id}-put", self.put, None, methods=["PUT"]
+            f"{self.route}", f"{self.id}-put", self.put, None, methods=["PUT"]
         )
         app.add_url_rule(
             f"{self.route}/<pk>",

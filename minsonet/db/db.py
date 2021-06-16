@@ -27,6 +27,10 @@ class DB:
             cursor.execute(stmt)
             connection.commit()
             lastrowid = cursor.lastrowid
+        except Exception as e:
+            template = "An exception of type {0} occurred. Arguments:\n{1!r}"
+            message = template.format(type(e).__name__, e.args)
+            print(message)
         finally:
             self.close(connection)
 
@@ -39,6 +43,10 @@ class DB:
             cursor = connection.cursor()
             result = cursor.execute(stmt).fetchone()
             return result
+        except Exception as e:
+            template = "An exception of type {0} occurred. Arguments:\n{1!r}"
+            message = template.format(type(e).__name__, e.args)
+            print(message)
         finally:
             self.close(connection)
 
@@ -49,5 +57,9 @@ class DB:
             cursor = connection.cursor()
             result = cursor.execute(stmt).fetchall()
             return result
+        except Exception as e:
+            template = "An exception of type {0} occurred. Arguments:\n{1!r}"
+            message = template.format(type(e).__name__, e.args)
+            print(message)
         finally:
             self.close(connection)
