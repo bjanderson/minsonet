@@ -1,0 +1,16 @@
+
+GET {{flaskserver}}/post_like/number-of-likes/postpk1
+
+###
+
+POST {{flaskserver}}/post_like
+{{jsoncontent}}
+
+{
+  "postPK": "postpk1",
+  "userPK": "userpk1"
+}
+
+###
+
+DELETE {{flaskserver}}/post_like/postpk1/userpk3

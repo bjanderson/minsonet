@@ -18,12 +18,14 @@ class CrudDB(ABC):
     @property
     def table_columns(self):
         cols = filter(
-            lambda col: not col.startswith("PRIMARY KEY")
-            and not col.startswith("FOREIGN KEY"),
+            lambda col: self.is_table_column(col),
             self.table_column_definitions,
         )
         cols = list(map(lambda col: col.split(" ")[0], cols))
         return cols
+
+    def is_table_column(col):
+        return not col.startswith("PRIMARY KEY") and not col.startswith("FOREIGN KEY")
 
     @abstractmethod
     def create_item(self, tup):
@@ -59,7 +61,6 @@ class CrudDB(ABC):
         return vals
 
     def insert(self, item):
-        print(f"insert item: {item}")
         try:
             item["pk"] = uuid.uuid4()
             cols = self.get_column_names()
