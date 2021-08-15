@@ -1,13 +1,19 @@
-GET {{flaskserver}}/user
+@hostname = localhost
+@port = 5000
+@host = {{hostname}}:{{port}}
+@server = http://{{host}}
+@contentType = Content-Type: application/json
+
+GET {{server}}/user
 
 ###
 
-GET {{flaskserver}}/user/userpk1
+GET {{server}}/user/userpk1
 
 ###
 
-POST {{flaskserver}}/user
-{{jsoncontent}}
+POST {{server}}/user
+{{contentType}}
 
 {
   "name": "username 3",
@@ -16,8 +22,8 @@ POST {{flaskserver}}/user
 
 ###
 
-PUT {{flaskserver}}/user
-{{jsoncontent}}
+PUT {{server}}/user
+{{contentType}}
 
 {
   "name": "updated username 3",
@@ -27,4 +33,4 @@ PUT {{flaskserver}}/user
 
 ###
 
-DELETE {{flaskserver}}/user/userpk3
+DELETE {{server}}/user/userpk3

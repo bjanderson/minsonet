@@ -1,8 +1,14 @@
-GET http://localhost:5000/
+@hostname = localhost
+@port = 5000
+@host = {{hostname}}:{{port}}
+@server = http://{{host}}
+@contentType = Content-Type: application/json
+
+GET {{server}}/
 
 ###
 
-POST http://localhost:5000/
-{{jsoncontent}}
+POST {{server}}/
+{{contentType}}
 
 { "test": "test"}

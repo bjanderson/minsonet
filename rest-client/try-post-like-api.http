@@ -1,10 +1,15 @@
+@hostname = localhost
+@port = 5000
+@host = {{hostname}}:{{port}}
+@server = http://{{host}}
+@contentType = Content-Type: application/json
 
-GET {{flaskserver}}/post_like/number-of-likes/postpk1
+GET {{server}}/post_like/number-of-likes/postpk1
 
 ###
 
-POST {{flaskserver}}/post_like
-{{jsoncontent}}
+POST {{server}}/post_like
+{{contentType}}
 
 {
   "postPK": "postpk1",
@@ -13,4 +18,4 @@ POST {{flaskserver}}/post_like
 
 ###
 
-DELETE {{flaskserver}}/post_like/postpk1/userpk3
+DELETE {{server}}/post_like/postpk1/userpk3
