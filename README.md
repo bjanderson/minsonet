@@ -15,9 +15,15 @@ To start the virtual env:
 
     pipenv shell
 
+Make sure the python interpreter used by VS Code is set to the python installed in your project .venv
+
 To run the project:
 
     flask run
+
+To test the project:
+
+    pytest
 
 To enable the debugger, run the project with:
 
