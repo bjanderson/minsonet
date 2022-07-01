@@ -22,7 +22,7 @@ POST {{server}}/user
 
 ###
 
-PUT {{server}}/user
+PUT {{server}}/user/userpk1
 {{contentType}}
 
 {

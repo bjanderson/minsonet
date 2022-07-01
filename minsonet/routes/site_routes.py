@@ -3,6 +3,7 @@ from flask import redirect, render_template, url_for
 
 def init_site_routes(app):
     @app.route("/")
+    @app.route("/index")
     def home():
         return render_template("index.html")
 
@@ -11,6 +12,7 @@ def init_site_routes(app):
         return render_template("posts.html")
 
     @app.route("/404")
+    @app.errorHandler(404)
     def not_found():
         return render_template("404.html")
 
